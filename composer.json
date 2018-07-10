@@ -1,0 +1,60 @@
+{
+    "name"       : "zxg321/survey",
+    "description": "问卷调查",
+    "type"       : "library",
+    "keywords"   : ["laravel", "survey"],
+    "homepage"   : "https://github.com/zxg321/survey",
+    "license"    : "MIT",
+    "authors"    : [
+        {
+            "name" : "zxg321",
+            "email": "zxg321@qq.com"
+        }
+    ],
+    "require": {
+        "php"                 : ">=7.0.0",
+        "symfony/dom-crawler" : "~3.1",
+        "laravel/framework"   : "~5.5",
+        "encore/laravel-admin": "~1.5"
+    },
+    "require-dev": {
+        "phpunit/phpunit"            : "~6.0",
+        "laravel/laravel"            : "~5.5",
+        "symfony/css-selector"       : "~3.1",
+        "fzaninotto/faker"           : "~1.4",
+        "intervention/image"         : "~2.3",
+        "laravel/browser-kit-testing": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "zxg321\\survey\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\Models\\": "tests/models",
+            "Tests\\Controllers\\": "tests/controllers"
+        },
+        "classmap": [
+            "tests/TestCase.php"
+        ]
+    },
+    "suggest": {
+        "intervention/image"      : "Required to handling and manipulation upload images (~2.3).",
+        "spatie/eloquent-sortable": "Required to built orderable gird."
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "zxg321\\survey\\AdminServiceProvider"
+            ],
+            "aliases": {
+                "Survey": "zxg321\\survey\\Facades\\Admin"
+            }
+
+        }
+    }
+}
